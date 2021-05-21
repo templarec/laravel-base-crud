@@ -1,4 +1,4 @@
-
+<a href="{{route('comic.index')}}">Home</a>
 <div class="card">
     <img src="{{$comic->thumb}}" alt="{{$comic->type}} thumb">
     <span>{{$comic->title}}</span>

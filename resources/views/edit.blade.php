@@ -4,7 +4,7 @@
         @method('PUT')
         <input type="text" name="title" value="{{$comic->title}}" placeholder="Titolo">
         <input type="text" name="thumb" value="{{$comic->thumb}}" placeholder="Url thumb">
-        <input type="number" min="0.01" max="9999.99" name="price" value="{{$comic->price}}" placeholder="Prezzo">
+        <input type="number"  name="price" value="{{$comic->price}}" placeholder="Prezzo">
         <input type="text" name="series" value="{{$comic->series}}" placeholder="Serie">
         <input type="text" name="sale_date" value="{{$comic->sale_date}}" placeholder="Data di vendita">
         <input type="text" name="type" value="{{$comic->type}}" placeholder="Tipo">
