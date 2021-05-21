@@ -16,7 +16,9 @@
     <title>laravel-base-crud</title>
 </head>
 <body>
-
+    <nav>
+        <a href="{{route('comic.create')}}">Inserisci nuovo Fumetto</a>
+    </nav>
     @foreach($comic as $id => $fumetto)
         <div class="card">
             <a href="{{route('comic.show', ['comic' => $fumetto->id])}}"><img src="{{$fumetto->thumb}}" alt="{{$fumetto->type}} thumb"></a>
@@ -26,6 +28,7 @@
             <span>{{$fumetto->series}}</span>
             <span>{{$fumetto->sale_date}}</span>
             <p>{{$fumetto->description}}</p>
+            <a href="{{route('comic.edit', ['comic' => $fumetto->id])}}">Modifica</a>
         </div>
     @endforeach
 
