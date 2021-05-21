@@ -16,11 +16,12 @@
     <title>laravel-base-crud</title>
 </head>
 <body>
+<div id="root">
     <nav>
         <a href="{{route('comic.create')}}">Inserisci nuovo Fumetto</a>
     </nav>
     @foreach($comic as $id => $fumetto)
-        <div class="card">
+        <div  class="card">
             <a href="{{route('comic.show', ['comic' => $fumetto->id])}}"><img src="{{$fumetto->thumb}}" alt="{{$fumetto->type}} thumb"></a>
             <span>{{$fumetto->title}}</span>
             <span>{{$fumetto->type}}</span>
@@ -32,13 +33,15 @@
             <form action="{{route('comic.destroy', ['comic' => $fumetto->id])}}" method="post">
                 @csrf
                 @method('DELETE')
-                <input type="submit" value="Elimina">
+                <input type="submit" @click="verMsh($event)">
             </form>
         </div>
     @endforeach
-
+</div>
+<!-- Vue cdn development -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 <!-- My custom JS script -->
-<script src="/js/main.js"></script>
+<script src="/js/app.js"></script>
 </body>
 <!-- laravel-base-crud - 20/05/21
  Author: lorenzobernini -->

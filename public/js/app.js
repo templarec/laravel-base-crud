@@ -19380,6 +19380,22 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var app = new Vue({
+  el: '#root',
+  data: {},
+  computed: {},
+  methods: {
+    verMsh: function verMsh(event) {
+      if (!confirm('Sicuro?')) {
+        event.preventDefault();
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
