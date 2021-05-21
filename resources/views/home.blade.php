@@ -29,6 +29,11 @@
             <span>{{$fumetto->sale_date}}</span>
             <p>{{$fumetto->description}}</p>
             <a href="{{route('comic.edit', ['comic' => $fumetto->id])}}">Modifica</a>
+            <form action="{{route('comic.destroy', ['comic' => $fumetto->id])}}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Elimina">
+            </form>
         </div>
     @endforeach
 

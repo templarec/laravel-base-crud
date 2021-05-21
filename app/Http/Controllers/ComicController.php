@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comic;
+use function GuzzleHttp\Promise\all;
+
 class ComicController extends Controller
 {
     /**
@@ -94,8 +96,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+
+        $comic->delete();
+        return redirect()->route('comic.index');
     }
 }
