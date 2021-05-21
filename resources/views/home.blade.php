@@ -33,7 +33,7 @@
             <form action="{{route('comic.destroy', ['comic' => $fumetto->id])}}" method="post">
                 @csrf
                 @method('DELETE')
-                <input type="submit" @click="verMsh($event)">
+                <input type="submit" @click="verMsh($event)" value="Elimina">
             </form>
         </div>
     @endforeach
