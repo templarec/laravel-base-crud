@@ -23,18 +23,22 @@
     <main>
         @foreach($comic as $id => $fumetto)
             <div  class="card">
-                <a href="{{route('comic.show', ['comic' => $fumetto->id])}}"><img src="{{$fumetto->thumb}}" alt="{{$fumetto->type}} thumb"></a>
-                <div class="overlay">
-                    <span>{{$fumetto->title}}</span>
-                    <span>{{$fumetto->price}} $</span>
+                <img src="{{$fumetto->thumb}}" alt="{{$fumetto->type}} thumb">
 
-                    <a href="{{route('comic.edit', ['comic' => $fumetto->id])}}">Modifica</a>
-                    <form action="{{route('comic.destroy', ['comic' => $fumetto->id])}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" @click="verMsh($event)" value="Elimina">
-                    </form>
-                </div>
+                    <div class="overlay">
+
+                            <span>{{$fumetto->title}}</span>
+                            <span>{{$fumetto->price}} $</span>
+                            <a href="{{route('comic.show', ['comic' => $fumetto->id])}}">Dettagli</a>
+                            <a href="{{route('comic.edit', ['comic' => $fumetto->id])}}">Modifica</a>
+                            <form action="{{route('comic.destroy', ['comic' => $fumetto->id])}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" @click="verMsh($event)" value="Elimina">
+                            </form>
+
+                    </div>
+
 
             </div>
         @endforeach
