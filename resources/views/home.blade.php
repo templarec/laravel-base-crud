@@ -38,8 +38,6 @@
                             </form>
 
                     </div>
-
-
             </div>
         @endforeach
     </main>
