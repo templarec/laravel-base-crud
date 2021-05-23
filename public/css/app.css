@@ -1,19 +1,114 @@
 body {
   display: flex;
-  flex-wrap: wrap;
-  width: 90%;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
-body .card {
-  width: calc(100% / 4 - 20px);
+body a {
+  text-decoration: none;
+  font-size: 25px;
+  color: orange;
+}
+
+body a:hover {
+  color: green;
+}
+
+body #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  justify-content: center;
 }
 
-body .card img {
-  height: 200px;
+body #root nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+body #root main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: flex-start;
+}
+
+body #root main .card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 10px;
+  font-size: 0;
+  position: relative;
+}
+
+body #root main .card:hover .overlay {
+  display: flex;
+}
+
+body #root main .card:hover img {
+  filter: grayscale(0);
+  box-shadow: 3px 3px 5px red;
+}
+
+body #root main .card img {
+  height: 300px;
+  max-width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  filter: grayscale(1);
+  box-shadow: 3px 3px 5px #333;
+}
+
+body #root main .card .overlay {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+body #root main .card .overlay a {
+  margin-left: auto;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+body #root main .card .overlay form {
+  margin-left: auto;
+}
+
+body #root main .card .overlay input {
+  font-size: 14px;
+  color: orange;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+body #root main .card .overlay input:hover {
+  color: green;
+}
+
+body #root main .card .overlay span {
+  padding: 0 10px;
+  color: white;
+  font-size: 12px;
+}
+
+body #root main .card .overlay span:nth-child(2) {
+  color: yellow;
 }
 

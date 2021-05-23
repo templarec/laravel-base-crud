@@ -20,23 +20,26 @@
     <nav>
         <a href="{{route('comic.create')}}">Inserisci nuovo Fumetto</a>
     </nav>
-    @foreach($comic as $id => $fumetto)
-        <div  class="card">
-            <a href="{{route('comic.show', ['comic' => $fumetto->id])}}"><img src="{{$fumetto->thumb}}" alt="{{$fumetto->type}} thumb"></a>
-            <span>{{$fumetto->title}}</span>
-            <span>{{$fumetto->type}}</span>
-            <span>{{$fumetto->price}} $</span>
-            <span>{{$fumetto->series}}</span>
-            <span>{{$fumetto->sale_date}}</span>
-            <p>{{$fumetto->description}}</p>
-            <a href="{{route('comic.edit', ['comic' => $fumetto->id])}}">Modifica</a>
-            <form action="{{route('comic.destroy', ['comic' => $fumetto->id])}}" method="post">
-                @csrf
-                @method('DELETE')
-                <input type="submit" @click="verMsh($event)" value="Elimina">
-            </form>
-        </div>
-    @endforeach
+    <main>
+        @foreach($comic as $id => $fumetto)
+            <div  class="card">
+                <a href="{{route('comic.show', ['comic' => $fumetto->id])}}"><img src="{{$fumetto->thumb}}" alt="{{$fumetto->type}} thumb"></a>
+                <div class="overlay">
+                    <span>{{$fumetto->title}}</span>
+                    <span>{{$fumetto->price}} $</span>
+
+                    <a href="{{route('comic.edit', ['comic' => $fumetto->id])}}">Modifica</a>
+                    <form action="{{route('comic.destroy', ['comic' => $fumetto->id])}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" @click="verMsh($event)" value="Elimina">
+                    </form>
+                </div>
+
+            </div>
+        @endforeach
+    </main>
+
 </div>
 <!-- Vue cdn development -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
