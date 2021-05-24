@@ -97,6 +97,53 @@ body {
             }
         }
     }
+    #edit, #create {
+        text-align: center;
+        form {
+            display: flex;
+            flex-direction: column;
+            input, textarea {
+                font-size: 18px;
+                width: 600px;
+                padding-left: 10px;
+            }
+            input[type="submit"] {
+                width: 100%;
+            }
 
+        }
+    }
+    #show {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .card {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img {
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            p:last-child {
+                margin: 0;
+                width: 50%;
+            }
+        }
+    }
+.alert.alert-danger {
+    border: 1px solid red;
+    color: red;
+    ul {
+        padding: 10px;
+        li {
+            list-style: none;
+        }
+    }
+}
 
 }

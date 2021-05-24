@@ -112,3 +112,66 @@ body #root main .card .overlay span:nth-child(2) {
   color: yellow;
 }
 
+body #edit,
+body #create {
+  text-align: center;
+}
+
+body #edit form,
+body #create form {
+  display: flex;
+  flex-direction: column;
+}
+
+body #edit form input,
+body #edit form textarea,
+body #create form input,
+body #create form textarea {
+  font-size: 18px;
+  width: 600px;
+  padding-left: 10px;
+}
+
+body #edit form input[type=submit],
+body #create form input[type=submit] {
+  width: 100%;
+}
+
+body #show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body #show .card {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body #show .card img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+body #show .card p:last-child {
+  margin: 0;
+  width: 50%;
+}
+
+body .alert.alert-danger {
+  border: 1px solid red;
+  color: red;
+}
+
+body .alert.alert-danger ul {
+  padding: 10px;
+}
+
+body .alert.alert-danger ul li {
+  list-style: none;
+}
+
